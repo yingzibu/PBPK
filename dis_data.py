@@ -62,12 +62,13 @@ class dis_data:
         print('*'*50)
 
     def plot_data(self, xlabel='time in minutes', ylabel='% dissolved',
+                  rlabel='ref batch', tlabel='test batch',
                   title='Mean distribution of the test and reference'):
         x_axis = self.time_points_float
         test_axis = self.test_mean
         ref_axis = self.ref_mean
-        plt.plot(x_axis, test_axis, '.-', label='test batch')
-        plt.plot(x_axis, ref_axis, '.-', label='ref batch')
+        plt.plot(x_axis, test_axis, '.-', label=tlabel)
+        plt.plot(x_axis, ref_axis, '.-', label=rlabel)
         plt.xlabel(xlabel)
         plt.ylabel(ylabel)
         plt.title(title)
